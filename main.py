@@ -35,7 +35,7 @@ def analyze_message(context_list: list, current_msg: str) -> str:
     context_str = "\n".join(context_list) if context_list else "(ไม่มีข้อความก่อนหน้า)"
     user_content = f"[บริบท]:\n{context_str}\n\n[ข้อความที่ต้องประเมิน]:\n\"{current_msg}\""
     response = llm_client.chat.completions.create(
-        model="thalle-0.2-thaillm-8b-fa",
+        model="THaLLE-0.2-ThaiLLM-8B-fa",
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_content},
