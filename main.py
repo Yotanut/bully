@@ -15,9 +15,9 @@ from linebot.v3.messaging import (
 app = FastAPI()
 
 # ดึงค่าจาก Environment Variables ของ Render
-LINE_ACCESS_TOKEN = os.environ.get("LINE_ACCESS_TOKEN", "")
-MODEL_API_URL = os.environ.get("MODEL_API_URL", "http://thaillm.or.th/api/v1")
-MODEL_API_KEY = os.environ.get("MODEL_API_KEY", "")
+LINE_ACCESS_TOKEN = os.environ.get("LINE_ACCESS_TOKEN", "").strip()
+MODEL_API_URL = os.environ.get("MODEL_API_URL", "http://thaillm.or.th/api/v1").strip()
+MODEL_API_KEY = os.environ.get("MODEL_API_KEY", "").strip()
 
 configuration = Configuration(access_token=LINE_ACCESS_TOKEN)
 llm_client = OpenAI(base_url=MODEL_API_URL, api_key=MODEL_API_KEY)
